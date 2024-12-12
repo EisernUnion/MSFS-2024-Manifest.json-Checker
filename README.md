@@ -40,3 +40,4 @@ Example duplicates
 <Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
 <Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
 <Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
+![image](https://github.com/user-attachments/assets/80b17418-3550-4e78-a2da-63c538167eae)

@@ -49,7 +49,7 @@ namespace MainifestFix
                 ProcessDirectory(subdirectory);
             }
 
-            MessageBox.Show("Done");
+          
         }
 
         public static void ProcessFile(string path)

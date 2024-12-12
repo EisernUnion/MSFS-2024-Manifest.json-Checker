@@ -9,35 +9,6 @@ No further development is to be expected as its just needed to run once ...maybe
 
 I removed 2233 duplicates.... so if i wouldnt fix the manifest.json files the content.xml grows and grows on each start of msfs2024  
 
-Example duplicates
-<Package name="community-29palms-airport-lgsr-santorini" active="Activated"/>
-<Package name="community-29palms-airport-lgsr-santorini" active="Activated"/>
-<Package name="community-29palms-airport-lgsr-santorini" active="Activated"/>
-<Package name="community-29palms-airport-lgsr-santorini" active="Activated"/>
-<Package name="community-29palms-airport-lgsr-santorini" active="Activated"/>
-<Package name="community-29palms-airport-lgsr-santorini" active="Activated"/>
-<Package name="community-a-mamudesign-powerlines" active="Activated"/>
-<Package name="community-a-mamudesign-powerlines" active="Activated"/>
-<Package name="community-a-mamudesign-powerlines" active="Activated"/>
-<Package name="community-a-mamudesign-powerlines" active="Activated"/>
-<Package name="community-a-mamudesign-powerlines" active="Activated"/>
-<Package name="community-a-mamudesign-powerlines" active="Activated"/>
-<Package name="community-aerosoft-airport-ebbr-brussels" active="Activated"/>
-<Package name="community-aerosoft-airport-ebbr-brussels" active="Activated"/>
-<Package name="community-aerosoft-airport-ebbr-brussels" active="Activated"/>
-<Package name="community-aerosoft-airport-ebbr-brussels" active="Activated"/>
-<Package name="community-aerosoft-airport-ebbr-brussels" active="Activated"/>
-<Package name="community-aerosoft-airport-ebbr-brussels" active="Activated"/>
-<Package name="community-aerosoft-airport-eddb-berlin-brandenburg" active="Activated"/>
-<Package name="community-aerosoft-airport-eddb-berlin-brandenburg" active="Activated"/>
-<Package name="community-aerosoft-airport-eddb-berlin-brandenburg" active="Activated"/>
-<Package name="community-aerosoft-airport-eddb-berlin-brandenburg" active="Activated"/>
-<Package name="community-aerosoft-airport-eddb-berlin-brandenburg" active="Activated"/>
-<Package name="community-aerosoft-airport-eddb-berlin-brandenburg" active="Activated"/>
-<Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
-<Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
-<Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
-<Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
-<Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
-<Package name="community-aerosoft-airport-eddf-frankfurt" active="Activated"/>
-![image](https://github.com/user-attachments/assets/80b17418-3550-4e78-a2da-63c538167eae)
+Example how it looks like after msfs2024 has been started 6 times 
+![image](https://github.com/user-attachments/assets/873ea3ed-1cd9-469c-9f25-da099c978bba)
+

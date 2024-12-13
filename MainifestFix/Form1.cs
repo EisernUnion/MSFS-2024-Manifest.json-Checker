@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Xml.Linq;
 using System.Diagnostics;
+using System.Data;
 
 namespace MainifestFix
 {
@@ -24,58 +25,79 @@ namespace MainifestFix
         private void button_Run_Click(object sender, EventArgs e)
         {
             CheckManifestFiles();
+            MessageBox.Show("Done!");
         }
 
-        public void CheckManifestFiles()
+        public  void CheckManifestFiles()
         {
             var pathToJson = Path.Combine(label_SelectedPath.Text);
-            ProcessDirectory(pathToJson);
+            string[] fileEntries = Directory.GetFiles(pathToJson, "manifest.json", SearchOption.AllDirectories);
+            
+            int cntFiles = fileEntries.Length;
+            label_Counter.Text = cntFiles.ToString() + " files to check";
 
+            ProcessDirectory(pathToJson, cntFiles);
+            
         }
 
-        public static void ProcessDirectory(string targetDirectory)
+        public void ProcessDirectory(string targetDirectory, int cntFiles)
         {
             // Process the list of files found in the directory.
             string[] fileEntries = Directory.GetFiles(targetDirectory, "manifest.json");
+          
+   
+
             foreach (string fileName in fileEntries)
             {
-                ProcessFile(fileName);
+
+          
+                ProcessFile(fileName, cntFiles);
+
             }
                
             // Recurse into subdirectories of this directory.
             string[] subdirectoryEntries = Directory.GetDirectories(targetDirectory);
             foreach (string subdirectory in subdirectoryEntries)
             {
-                ProcessDirectory(subdirectory);
+                ProcessDirectory(subdirectory, cntFiles);
             }
 
-          
         }
 
-        public static void ProcessFile(string path)
+        public void ProcessFile(string path, int cnt)
         {
-            // Load the content of the file as a string
-            string json = File.ReadAllText(path);
-
-            // Parse the JSON to a Newtonsoft.Json.Linq.JObject
-            JObject obj = JObject.Parse(json);
-
-            bool check = obj.ContainsKey("builder");
-            if (check == false)
+            try
             {
-                // Add the property
-                obj["builder"] = "Microsoft Flight Simulator 2024";
 
-                // Convert back to a JSON string
-                string newJson = obj.ToString();
+                // Load the content of the file as a string
+                string json = File.ReadAllText(path);
 
-                // Save the string back to the file
-                File.WriteAllText(path, newJson);
+                // Parse the JSON to a Newtonsoft.Json.Linq.JObject
+                JObject obj = JObject.Parse(json);
+
+                bool check = obj.ContainsKey("builder");
+                if (check == false)
+                {
+                    // Add the property
+                    obj["builder"] = "Microsoft Flight Simulator 2024";
+
+                    // Convert back to a JSON string
+                    string newJson = obj.ToString();
+
+                    // Save the string back to the file
+                    File.WriteAllText(path, newJson);
+                    listBox_Output.Items.Add(path);
+                }
+                else if (check == true)
+                {
+
+                }
             }
-            else if (check == true)
+            catch
             {
-                Debug.WriteLine(path);
+
             }
+            label_Counter.Text = listBox_Output.Items.Count.ToString() + " / " + cnt.ToString();
         }
     }
 }

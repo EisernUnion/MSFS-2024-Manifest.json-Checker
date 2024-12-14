@@ -37,11 +37,16 @@
             listBox_Output = new ListBox();
             label2 = new Label();
             label_Counter = new Label();
+            checkBox_Remove = new CheckBox();
+            checkBox2020 = new CheckBox();
+            checkBox2024 = new CheckBox();
+            label3 = new Label();
+            button_Clear = new Button();
             SuspendLayout();
             // 
             // button_SelectFolder
             // 
-            button_SelectFolder.Location = new Point(21, 63);
+            button_SelectFolder.Location = new Point(19, 63);
             button_SelectFolder.Name = "button_SelectFolder";
             button_SelectFolder.Size = new Size(112, 34);
             button_SelectFolder.TabIndex = 0;
@@ -52,15 +57,17 @@
             // label_SelectedPath
             // 
             label_SelectedPath.AutoSize = true;
-            label_SelectedPath.Location = new Point(21, 104);
+            label_SelectedPath.Location = new Point(19, 104);
             label_SelectedPath.Name = "label_SelectedPath";
             label_SelectedPath.Size = new Size(19, 25);
             label_SelectedPath.TabIndex = 1;
             label_SelectedPath.Text = "-";
+            label_SelectedPath.TextChanged += label_SelectedPath_TextChanged;
             // 
             // button_Run
             // 
-            button_Run.Location = new Point(21, 153);
+            button_Run.Enabled = false;
+            button_Run.Location = new Point(19, 291);
             button_Run.Name = "button_Run";
             button_Run.Size = new Size(112, 34);
             button_Run.TabIndex = 2;
@@ -71,7 +78,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 24);
+            label1.Location = new Point(19, 24);
             label1.Name = "label1";
             label1.Size = new Size(368, 25);
             label1.TabIndex = 3;
@@ -80,7 +87,7 @@
             // labelStatus
             // 
             labelStatus.AutoSize = true;
-            labelStatus.Location = new Point(27, 210);
+            labelStatus.Location = new Point(26, 336);
             labelStatus.Name = "labelStatus";
             labelStatus.Size = new Size(0, 25);
             labelStatus.TabIndex = 4;
@@ -92,7 +99,7 @@
             listBox_Output.FormattingEnabled = true;
             listBox_Output.HorizontalScrollbar = true;
             listBox_Output.ItemHeight = 25;
-            listBox_Output.Location = new Point(22, 245);
+            listBox_Output.Location = new Point(21, 368);
             listBox_Output.Name = "listBox_Output";
             listBox_Output.Size = new Size(877, 175);
             listBox_Output.TabIndex = 5;
@@ -101,7 +108,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.ControlDark;
-            label2.Location = new Point(18, 219);
+            label2.Location = new Point(17, 342);
             label2.Name = "label2";
             label2.Size = new Size(120, 25);
             label2.TabIndex = 6;
@@ -110,17 +117,76 @@
             // label_Counter
             // 
             label_Counter.AutoSize = true;
-            label_Counter.Location = new Point(147, 157);
+            label_Counter.Location = new Point(146, 295);
             label_Counter.Name = "label_Counter";
             label_Counter.Size = new Size(19, 25);
             label_Counter.TabIndex = 7;
             label_Counter.Text = "-";
             // 
+            // checkBox_Remove
+            // 
+            checkBox_Remove.AutoSize = true;
+            checkBox_Remove.Location = new Point(212, 194);
+            checkBox_Remove.Name = "checkBox_Remove";
+            checkBox_Remove.Size = new Size(175, 29);
+            checkBox_Remove.TabIndex = 8;
+            checkBox_Remove.Text = "Remove \"Builder\"";
+            checkBox_Remove.UseVisualStyleBackColor = true;
+            checkBox_Remove.CheckedChanged += checkBox_Remove_CheckedChanged;
+            // 
+            // checkBox2020
+            // 
+            checkBox2020.AutoSize = true;
+            checkBox2020.Location = new Point(19, 194);
+            checkBox2020.Name = "checkBox2020";
+            checkBox2020.Size = new Size(176, 29);
+            checkBox2020.TabIndex = 11;
+            checkBox2020.Text = "Add Builder 2020";
+            checkBox2020.UseVisualStyleBackColor = true;
+            checkBox2020.CheckedChanged += checkBox2020_CheckedChanged;
+            // 
+            // checkBox2024
+            // 
+            checkBox2024.AutoSize = true;
+            checkBox2024.Location = new Point(21, 229);
+            checkBox2024.Name = "checkBox2024";
+            checkBox2024.Size = new Size(137, 29);
+            checkBox2024.TabIndex = 12;
+            checkBox2024.Text = "Builder 2024";
+            checkBox2024.UseVisualStyleBackColor = true;
+            checkBox2024.Visible = false;
+            checkBox2024.CheckedChanged += checkBox2024_CheckedChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(19, 146);
+            label3.Name = "label3";
+            label3.Size = new Size(589, 25);
+            label3.TabIndex = 13;
+            label3.Text = "Choose 1 action. Either add 'Builder' or remove existing 'Builder' property";
+            // 
+            // button_Clear
+            // 
+            button_Clear.Location = new Point(786, 569);
+            button_Clear.Name = "button_Clear";
+            button_Clear.Size = new Size(112, 34);
+            button_Clear.TabIndex = 14;
+            button_Clear.Text = "Clear";
+            button_Clear.UseVisualStyleBackColor = true;
+            button_Clear.Click += button_Clear_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(911, 430);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(959, 615);
+            Controls.Add(button_Clear);
+            Controls.Add(label3);
+            Controls.Add(checkBox2024);
+            Controls.Add(checkBox2020);
+            Controls.Add(checkBox_Remove);
             Controls.Add(label_Counter);
             Controls.Add(label2);
             Controls.Add(listBox_Output);
@@ -146,5 +212,10 @@
         private ListBox listBox_Output;
         private Label label2;
         private Label label_Counter;
+        private CheckBox checkBox_Remove;
+        private CheckBox checkBox2020;
+        private CheckBox checkBox2024;
+        private Label label3;
+        private Button button_Clear;
     }
 }
